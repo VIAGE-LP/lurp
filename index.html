@@ -53,7 +53,15 @@
 
     <!-- Messenger 洽談外掛程式 Code -->
     <div id="fb-root"></div>
+
+    <!-- Your 洽談外掛程式 code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
     <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "102641435046761");
+        chatbox.setAttribute("attribution", "page_inbox");
         window.fbAsyncInit = function () {
             FB.init({
                 xfbml: true,
@@ -69,10 +77,6 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
-    <!-- Your 洽談外掛程式 code -->
-    <div class="fb-customerchat" attribution="page_inbox" page_id="102641435046761">
-    </div>
 
     <!-- ▼自由編集箇所▼ -->
     <div id="wrapper">
