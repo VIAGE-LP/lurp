@@ -7,6 +7,21 @@ $(document).ready(function () {
         }, 900);
     });
 
+    // 日本的modal
+    $('.modal-open-button').click(function () {
+        $('#modal-wrap').css('position', 'absolute');
+    });
+
+    // 日本的modal自動抓取月份最後一天
+    var nowDate = new Date();
+    var year = nowDate.getFullYear()
+    var month = nowDate.getMonth() + 1;
+    month = month < 10 ? '0' + month : month;
+    var lastDay = new Date(`${year}`, `${month}`, 0);
+    var day = lastDay.getDate();
+    day = day < 10 ? '0' + day : day;
+    $('#lastday').text(`${month}/${day}`);
+
     // $("#wh-call-to-action").removeAttr("wh-click");
     $("#wh-call-to-action").removeClass("wh-animation-in");
     //聊天機器人
